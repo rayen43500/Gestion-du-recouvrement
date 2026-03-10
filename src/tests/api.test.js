@@ -23,7 +23,6 @@ describe('API Endpoints', () => {
   describe('Collections', () => {
     it('should return 400 for invalid collection action', async () => {
       const res = await request(app)
-      express.text  request(app)    
         .post('/collections')
         .send({ actionType: 'invalid' });
       expect(res.statusCode).toBe(400);
