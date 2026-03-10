@@ -1,21 +1,17 @@
-# Recouvra+ API
+![alt text](image.png)
 
-**Plateforme de gestion du recouvrement de factures impayées**
-
-## 📋 Project Overview
+## Project Overview
 
 Recouvra+ est une API REST complète pour gérer les clients, les factures impayées et les actions de recouvrement d'une entreprise. Le projet est structuré en modules fonctionnels pour faciliter le travail collaboratif en équipe.
 
-## 👥 Team Structure & Responsibilities
+## Team Structure & Responsibilities
 
 | Personne | Module | Responsabilities |
 |----------|--------|------------------|
 | **Personne 1** | **Authentification & Utilisateurs** | JWT, Users CRUD, Rôles, Sécurité |
 | Personne 2 | Clients & Factures | Gestion des clients, Factures, Paiements |
 | Personne 3 | Actions de Recouvrement | Suivi, Statistiques, Reporting |
-| Personne 4 | Intégration & Déploiement | Tests, CI/CD, Documentation API |
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 22+
@@ -50,26 +46,9 @@ Recouvra+ est une API REST complète pour gérer les clients, les factures impay
    - Base URL: `http://localhost:5000`
    - Swagger Docs: `http://localhost:5000/api-docs`
 
-## 📦 Project Structure
-
-```
-Recouvra+/
-├── src/
-│   ├── app.js                    # Express application
-│   ├── server.js                 # Server entry point
-│   ├── config/                   # Configuration files
-│   ├── models/                   # Database models
-│   ├── controllers/              # Business logic
-│   ├── routes/                   # API routes
-│   ├── middleware/               # Custom middleware
-│   └── validations/              # Request validation
-├── tests/                        # Test suites
-├── .env.example                  # Environment template
-├── package.json                  # Dependencies
-└── README.md                     # This file
 ```
 
-## 📚 Module Documentation
+## Module Documentation
 
 ### Personne 1: Authentication & Users
 **Complete Module Documentation**: [AUTH_README.md](./AUTH_README.md)
@@ -150,7 +129,7 @@ GET        /statistics         - Get recovery statistics
 - ✅ Account Status Checking
 - ✅ Protected Routes
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run all tests
@@ -168,7 +147,7 @@ npm test -- --coverage
 - `tests/users.test.js` - User CRUD tests
 - `tests/user.model.test.js` - User model tests
 
-## 📝 Technologies
+##  Technologies
 
 | Layer | Technology |
 |-------|-----------|
@@ -182,7 +161,7 @@ npm test -- --coverage
 | **Testing** | Jest + Supertest |
 | **Dev Tools** | Nodemon |
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -202,7 +181,7 @@ JWT_EXPIRE=7d
 VALID_ROLES=agent,manager,admin
 ```
 
-## 📖 API Documentation
+##  API Documentation
 
 Complete API documentation is available via Swagger UI:
 
@@ -225,7 +204,7 @@ Response:
 }
 ```
 
-## 🎯 Development Workflow
+##  Development Workflow
 
 ### 1. Create Feature Branch
 ```bash
@@ -253,7 +232,7 @@ git push origin feature/your-feature-name
 ### 5. Merge
 After review and approval, merge to main branch
 
-## 📋 User Roles & Permissions
+##  User Roles & Permissions
 
 ### Agent
 - View own profile
@@ -272,7 +251,7 @@ After review and approval, merge to main branch
 - Change user roles
 - System configuration
 
-## 🚨 Common Errors & Solutions
+##  Common Errors & Solutions
 
 | Error | Solution |
 |-------|----------|
@@ -282,51 +261,9 @@ After review and approval, merge to main branch
 | Validation error (400) | Check request body format |
 | Email already exists (409) | Use different email |
 
-## 🐛 Debugging
 
-### Enable Verbose Logging
-```bash
-DEBUG=* npm run dev
-```
 
-### Check MongoDB Data
-```bash
-# MongoDB Shell
-use recouvra
-db.users.find()
-```
-
-## 📅 Project Timeline
-
-| Date | Phase | Status |
-|------|-------|--------|
-| Mar 9 | **Phase 1**: Auth & Users | ✅ **COMPLETE** |
-| Mar 15 | **Phase 2**: Clients & Invoices | 📅 In Progress |
-| Mar 20 | **Phase 3**: Recovery Actions | 📅 Planned |
-| Mar 25 | **Phase 4**: Testing & Integration | 📅 Planned |
-| Mar 30 | **Final Delivery** | 📅 Expected |
-
-## 📬 Git Commit Standards
-
-Follow this format for commit messages:
-
-```
-feat: add new feature
-fix: fix bug
-docs: update documentation
-test: add tests
-refactor: refactor code
-style: code style changes
-chore: dependencies, configuration
-```
-
-Example:
-```bash
-git commit -m "feat: add password reset functionality"
-git commit -m "fix: correct JWT expiration handling"
-```
-
-## 🔗 Useful Links
+##  Useful Links
 
 - [Authentication Module Docs](./AUTH_README.md)
 - [Express.js Docs](https://expressjs.com)
@@ -335,73 +272,7 @@ git commit -m "fix: correct JWT expiration handling"
 - [Swagger Editor](https://editor.swagger.io)
 - [MongoDB Docs](https://docs.mongodb.com)
 
-## 💡 Tips for Team Collaboration
 
-1. **Always pull latest changes before starting work**
-   ```bash
-   git pull origin main
-   ```
-
-2. **Keep commits small and logical**
-   - One feature per commit
-   - Clear commit messages
-
-3. **Run tests before pushing**
-   ```bash
-   npm test
-   ```
-
-4. **Review module documentation**
-   - Each module has its own README
-   - Check before implementing dependent features
-
-5. **Communicate via PR comments**
-   - Ask questions in code reviews
-   - Discuss approach before major changes
-
-## 🎓 Learning Resources
-
-### For Beginners
-- [Node.js Basics](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
-- [Express Basics](https://expressjs.com/en/starter/basic-routing.html)
-- [MongoDB Basics](https://docs.mongodb.com/manual/introduction/)
-
-### For Advanced Topics
-- [JWT Deep Dive](https://auth0.com/blog/json-web-tokens-concepts-and-challenges/)
-- [RBAC Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-- [API Security](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
-
-## ❓ FAQ
-
-**Q: Can I run tests on Windows?**
-A: Yes! Jest works on all platforms. Just use `npm test`
-
-**Q: How do I reset the database?**
-A: Delete the mongo data directory or use MongoDB Compass to drop the database
-
-**Q: What if I forget my JWT password?**
-A: In development, change `JWT_SECRET` in `.env`. In production, users must request a new token
-
-**Q: How do I add a new role?**
-A: See [AUTH_README.md](./AUTH_README.md#add-new-role)
-
-## 📞 Support
-
-- Check this README first
-- Review module documentation
-- Look at test files for usage examples
-- Ask team members
-- Check error logs
-
-## 📄 License
-
-ISC
-
-## 👨‍💻 Author
-
-- Repository: https://github.com/rayen43500/Gestion-du-recouvrement
-
----
 
 **Last Updated**: March 9, 2026  
 **API Version**: 1.0.0  
