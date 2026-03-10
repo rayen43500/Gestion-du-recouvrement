@@ -1,0 +1,167 @@
+openapi: 3.0.0
+info:
+  title: Recouvra+ API
+  version: 1.0.0
+  description: API de gestion du recouvrement (paiements, actions, statistiques)
+servers:
+  - url: http://localhost:3000
+paths:
+  /payments:
+    post:
+      summary: Créer un paiement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '201':
+          description: Paiement créé
+    get:
+      summary: Liste des paiements
+      responses:
+        '200':
+          description: Liste des paiements
+  /payments/{id}:
+    get:
+      summary: Détail d'un paiement
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paiement trouvé
+    put:
+      summary: Modifier un paiement
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '200':
+          description: Paiement modifié
+    delete:
+      summary: Supprimer un paiement
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paiement supprimé
+  /collections:
+    post:
+      summary: Créer une action de recouvrement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionAction'
+      responses:
+        '201':
+          description: Action créée
+    get:
+      summary: Liste des actions de recouvrement
+      responses:
+        '200':
+          description: Liste des actions
+  /collections/{id}:
+    get:
+      summary: Détail d'une action
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Action trouvée
+    put:
+      summary: Modifier une action
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionAction'
+      responses:
+        '200':
+          description: Action modifiée
+    delete:
+      summary: Supprimer une action
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Action supprimée
+  /stats:
+    get:
+      summary: Obtenir les statistiques
+      responses:
+        '200':
+          description: Statistiques
+components:
+  schemas:
+    Payment:
+      type: object
+      properties:
+        amount:
+          type: number
+        date:
+          type: string
+          format: date-time
+        method:
+          type: string
+          enum: [cash, cheque, transfer, other]
+        invoice:
+          type: string
+        client:
+          type: string
+        note:
+          type: string
+    CollectionAction:
+      type: object
+      properties:
+        actionType:
+          type: string
+          enum: [call, email, letter, visit, legal, other]
+        date:
+          type: string
+          format: date-time
+        agent:
+          type: string
+        client:
+          type: string
+        invoice:
+          type: string
+        status:
+          type: string
+          enum: [pending, completed, failed]
+        note:
+          type: string
