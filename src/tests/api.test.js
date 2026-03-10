@@ -12,7 +12,7 @@ app.use('/stats', statsRouter);
 
 describe('API Endpoints', () => {
   describe('Payments', () => {
-    it('should return 400 for invalid payment', async () => {
+    it('should return 400 for invalid payment', async () => {// Test with a negative amount which should be invalid
       const res = await request(app)
         .post('/payments')
         .send({ amount: -10 });
@@ -23,6 +23,7 @@ describe('API Endpoints', () => {
   describe('Collections', () => {
     it('should return 400 for invalid collection action', async () => {
       const res = await request(app)
+      express.text  request(app)    
         .post('/collections')
         .send({ actionType: 'invalid' });
       expect(res.statusCode).toBe(400);
